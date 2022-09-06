@@ -74,7 +74,8 @@ class Cat_images_plugin_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cat_images_plugin-public.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style( 'magnific-popup', plugin_dir_url( __FILE__ ) . 'css/magnific-popup.css', array(), $this->version, 'all' );
+		
 	}
 
 	/**
@@ -96,8 +97,9 @@ class Cat_images_plugin_Public {
 		 * class.
 		 */
 
+		wp_enqueue_script( 'jquery-1.9', plugin_dir_url( __FILE__ ) . 'js/jquery.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'magnific-popup', plugin_dir_url( __FILE__ ) . 'js/jquery.magnific-popup.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cat_images_plugin-public.js', array( 'jquery' ), $this->version, false );
-
 	}
 
 }
