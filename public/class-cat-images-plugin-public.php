@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -20,7 +19,7 @@
  * @subpackage Cat_images_plugin/public
  * @author     Cui Bing <topskill.dev@gmail.com>
  */
-class Cat_images_plugin_Public {
+class Cat_Images_Plugin_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -44,13 +43,13 @@ class Cat_images_plugin_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param string $plugin_name       The name of the plugin.
+	 * @param string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 		add_shortcode( 'cat_gallery', array( $this, 'cat_gallery_shortcode' ) );
 	}
 
@@ -96,12 +95,11 @@ class Cat_images_plugin_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
 		wp_enqueue_script( 'jquery-1.9', plugin_dir_url( __FILE__ ) . 'js/jquery.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( 'magnific-popup', plugin_dir_url( __FILE__ ) . 'js/jquery.magnific-popup.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cat_images_plugin-public.js', array( 'jquery' ), $this->version, false );
 	}
-	
+
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
@@ -130,5 +128,6 @@ class Cat_images_plugin_Public {
 		require_once __DIR__ . '/partials/cat-images-plugin-public-display.php';
 		return ob_get_clean();
 	}
+
 
 }

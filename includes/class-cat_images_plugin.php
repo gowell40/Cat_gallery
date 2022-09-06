@@ -89,7 +89,7 @@ class Cat_images_plugin {
 	 * - Cat_images_plugin_Loader. Orchestrates the hooks of the plugin.
 	 * - Cat_images_plugin_i18n. Defines internationalization functionality.
 	 * - Cat_images_plugin_Admin. Defines all hooks for the admin area.
-	 * - Cat_images_plugin_Public. Defines all hooks for the public side of the site.
+	 * - Cat_Images_Plugin_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -120,7 +120,7 @@ class Cat_images_plugin {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-cat_images_plugin-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-cat-images-plugin-public.php';
 
 		$this->loader = new Cat_images_plugin_Loader();
 
@@ -168,7 +168,7 @@ class Cat_images_plugin {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Cat_images_plugin_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Cat_Images_Plugin_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );

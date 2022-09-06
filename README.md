@@ -111,6 +111,6 @@ Titles are optional, naturally.
             "Markdown is what the parser uses to process much of the readme file"
 
 Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
+> [cat_gallery limit="10"]
 
-`<?php code(); // goes in backticks ?>`
+`<?php echo do_shortcode( '[cat_gallery limit="10"]' ); // limit is number for cat images limitation ?>`
