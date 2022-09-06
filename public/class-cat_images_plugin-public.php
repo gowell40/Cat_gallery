@@ -51,7 +51,7 @@ class Cat_images_plugin_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
+		add_shortcode( 'cat_gallery', array( $this, 'cat_gallery_shortcode' ) );
 	}
 
 	/**
